@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toy Haven | Home</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">Toy <span>Haven</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="wishlist.html">Wishlist</a></li>
+            <li>
+                <a href="cart.html" class="cart-link">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count hidden">0</span>
+                </a>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="menu-btn" aria-label="Menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </nav>
+</header>
+
+<!-- ===================== HERO SLIDER ===================== -->
+<section class="hero">
+    <div class="hero-slider">
+
+        <div class="hero-slide active" style="background-image: url('images/hero1.jpg')">
+            <div class="hero-content">
+                <h1>Welcome to Toy Haven</h1>
+                <p>Discover fun toys, games & gifts for every age</p>
+                <a href="products.html" class="btn">Shop Now</a>
+            </div>
+        </div>
+
+        <div class="hero-slide" style="background-image: url('images/hero2.jpg')">
+            <div class="hero-content">
+                <h1>New Arrivals</h1>
+                <p>Check out the latest toys & bestsellers</p>
+                <a href="products.html" class="btn">Explore Now</a>
+            </div>
+        </div>
+
+        <div class="hero-slide" style="background-image: url('images/hero3.jpg')">
+            <div class="hero-content">
+                <h1>Special Offers</h1>
+                <p>Great deals on soft toys, games & more</p>
+                <a href="products.html" class="btn">Shop Deals</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Slider Controls -->
+    <button class="hero-prev" aria-label="Previous slide">
+        <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button class="hero-next" aria-label="Next slide">
+        <i class="fa-solid fa-chevron-right"></i>
+    </button>
+
+    <!-- Slider Dots -->
+    <div class="hero-dots">
+        <button class="dot active" data-slide="0" aria-label="Slide 1"></button>
+        <button class="dot" data-slide="1" aria-label="Slide 2"></button>
+        <button class="dot" data-slide="2" aria-label="Slide 3"></button>
+    </div>
+</section>
+
+<!-- ===================== FEATURED PRODUCTS ===================== -->
+<section class="products">
+    <h2>Featured Products</h2>
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="images/product1.jpg" alt="SPC UNO Card Pack">
+            <h3>SPC UNO Card Pack</h3>
+            <p class="price">Rs.750.00</p>
+            <button class="add-to-cart" data-name="SPC UNO Card Pack" data-price="750" data-image="images/product1.jpg">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/product2.jpg" alt="Beach Toy Set">
+            <h3>Beach Toy Set (8pcs)</h3>
+            <p class="price">Rs.1420.00</p>
+            <button class="add-to-cart" data-name="Beach Toy Set (8pcs)" data-price="1420" data-image="images/product2.jpg">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/product3.jpg" alt="HULK Figurine">
+            <h3>HULK Figurine (45cm)</h3>
+            <p class="price">Rs.2990.00</p>
+            <button class="add-to-cart" data-name="HULK Figurine (45cm)" data-price="2990" data-image="images/product3.jpg">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/product5.jpg" alt="Dolphin Plushie">
+            <h3>Dolphin Plushie</h3>
+            <p class="price">Rs.2400.00</p>
+            <button class="add-to-cart" data-name="Dolphin Plushie" data-price="2400" data-image="images/product5.jpg">Add to Cart</button>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== NEWSLETTER ===================== -->
+<section class="newsletter">
+    <h2>Stay Updated</h2>
+    <p>Subscribe for new arrivals, offers & toy tips</p>
+    <form id="newsletterForm">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 Toy Haven | All Rights Reserved</p>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

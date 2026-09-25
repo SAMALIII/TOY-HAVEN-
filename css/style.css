@@ -1,0 +1,246 @@
+
+:root {
+    --bg: #FBF7F4;
+    --surface: #FFFFFF;
+    --text: #3A3A3A;
+    --text-muted: #7A7A7A;
+    --primary: #7CB9C8;          /* soft teal-blue */
+    --primary-dark: #5FA3B3;
+    --accent: #E8A0A0;           /* soft peach/coral */
+    --accent-dark: #D88A8A;
+    --success: #8FBC8F;          /* soft sage green */
+    --success-dark: #76A876;
+    --danger: #E07A7A;           /* soft rose */
+    --danger-dark: #C96A6A;
+    --border: #EDE6E0;
+    --shadow: 0 6px 20px rgba(90, 70, 60, 0.08);
+    --radius: 14px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+}
+
+/* ===================================
+   NAVBAR
+=================================== */
+
+header {
+    background: var(--surface);
+    box-shadow: 0 2px 12px rgba(90, 70, 60, 0.06);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+
+.nav-links a {
+    font-weight: 500;
+    font-size: 15px;
+    transition: 0.3s;
+    color: var(--text);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary);
+}
+
+.cart-link {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-count.hidden {
+    display: none;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 24px;
+    background: none;
+    color: var(--text);
+}
+
+/* ===================================
+   FOOTER
+=================================== */
+
+footer {
+    margin-top: 60px;
+    background: #5C6B73;
+    color: #F5F0EB;
+    text-align: center;
+    padding: 24px 20px;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* ===================================
+   NOTIFICATION TOAST
+=================================== */
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--success);
+    color: #fff;
+    padding: 14px 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: 0.3s ease;
+    z-index: 9999;
+    font-size: 14px;
+    max-width: 320px;
+}
+
+.notification.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.notification.error {
+    background: var(--danger);
+}
+
+/* ===================================
+   COMMON BUTTONS
+=================================== */
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: var(--primary-dark);
+}
+
+.btn-primary {
+    background: var(--primary);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+.btn-success {
+    background: var(--success);
+}
+
+.btn-success:hover {
+    background: var(--success-dark);
+}
+
+.btn-danger {
+    background: var(--danger);
+}
+
+.btn-danger:hover {
+    background: var(--danger-dark);
+}
+
+/* ===================================
+   RESPONSIVE NAV
+=================================== */
+
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--surface);
+        flex-direction: column;
+        padding: 20px;
+        gap: 16px;
+        box-shadow: 0 10px 24px rgba(90, 70, 60, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
