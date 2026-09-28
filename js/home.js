@@ -2,9 +2,8 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // ==========================================
-    // JSON DATA
-    // ==========================================
+    //  DATA //
+   
 
     let homeData = {
         products: [],
@@ -15,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // Load product data from home.json
+    // Load product data from home//
     async function loadHomeData() {
         try {
             const response = await fetch("home.json");
@@ -28,10 +27,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             console.log("JSON data loaded successfully:", homeData);
 
-            // Render products if the container exists
+            // Render products if the container exists //
             renderProducts(homeData.products);
 
-            // Start slider after JSON settings are loaded
+            // Start slider after JSON settings are loaded //
             startAuto();
 
         } catch (error) {
@@ -39,15 +38,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
             showNotification("Unable to load product data", true);
 
-            // Start slider with default settings
+            // Start slider with default settings //
             startAuto();
         }
     }
 
 
-    // ==========================================
-    // RENDER PRODUCTS FROM JSON
-    // ==========================================
+  
+    // RENDER PRODUCTS FROM JSON //
+   
 
     function renderProducts(products) {
         const productContainer =
@@ -93,9 +92,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // ==========================================
-    // HERO BANNER SLIDER
-    // ==========================================
+   
+    // HERO BANNER SLIDER //
+    
 
     const slides = document.querySelectorAll(".hero-slide");
     const dots = document.querySelectorAll(".hero-dots .dot");
@@ -182,9 +181,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // ==========================================
-    // CART FUNCTIONS
-    // ==========================================
+
+    // CART FUNCTIONS //
+
 
     function getCart() {
         return JSON.parse(localStorage.getItem("cart")) || [];
@@ -198,7 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.querySelectorAll(".add-to-cart").forEach(button => {
 
-            // Prevent duplicate event listeners
+            
             if (button.dataset.cartAttached === "true") {
                 return;
             }
@@ -246,9 +245,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // ==========================================
-    // NEWSLETTER
-    // ==========================================
+
+    // NEWSLETTER //
+  
 
     const form = document.getElementById("newsletterForm");
 
@@ -279,9 +278,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // ==========================================
-    // NOTIFICATION
-    // ==========================================
+    // NOTIFICATIONss //
+   
 
     function showNotification(message, isError = false) {
 
@@ -317,9 +315,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // ==========================================
-    // INITIALISE JSON DATA
-    // ==========================================
+   
+    // INITIALISING THE  DATA //
+    
 
     loadHomeData();
 

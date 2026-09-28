@@ -1,13 +1,13 @@
-// ===================================
-// PRODUCTS PAGE - Works with static HTML products
-// ===================================
+
+// PRODUCTS PAGE //
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const productCards = document.querySelectorAll(".product-card");
     const searchInput = document.getElementById("search");
     const categorySelect = document.getElementById("category");
 
-    // ========== SEARCH ==========
+    // SEARCH 
     if (searchInput) {
         searchInput.addEventListener("keyup", function () {
             const value = this.value.toLowerCase().trim();
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // ========== CATEGORY FILTER ==========
+    // CATEGORY FILTER 
     if (categorySelect) {
         categorySelect.addEventListener("change", function () {
             const selected = this.value;
@@ -38,15 +38,15 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // ========== ADD TO CART ==========
+    // ADD TO CART 
     document.querySelectorAll(".cart-btn").forEach(button => {
         button.addEventListener("click", function () {
             const card = this.closest(".product-card");
 
-            // Get clean data
+            // NEW AND CLEAN DATA//
             const name = card.querySelector("h3").textContent.trim();
             const priceText = card.querySelector(".price").textContent;
-            // Extract only the number (removes "Rs." and commas)
+            // ONLY THE VALUE //
             const price = parseFloat(priceText.replace(/[^\d.]/g, ""));
             const image = card.querySelector("img").getAttribute("src"); // keeps relative path
 
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
             updateCartCount(); // if you have this function in main.js
             showNotification(name + " added to cart");
 
-            // Visual feedback
+            //  feedback // 
             const originalText = this.textContent;
             this.textContent = "Added ✓";
             this.style.background = "#198754";
@@ -84,14 +84,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // ========== WISHLIST ==========
+    //  WISHLIST 
     const wishlist = getWishlist();
 
     document.querySelectorAll(".wishlist-btn").forEach(button => {
         const card = button.closest(".product-card");
         const name = card.querySelector("h3").textContent.trim();
 
-        // Show filled heart if already in wishlist
+        // Show filled heart if already in wishlist //
         if (wishlist.some(item => item.name === name)) {
             button.classList.add("active");
             button.innerHTML = '<i class="fa-solid fa-heart"></i>';
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const exists = list.find(item => item.name === product.name);
 
             if (exists) {
-                // Remove from wishlist
+                // Remove from wishlist //
                 list = list.filter(item => item.name !== product.name);
                 this.classList.remove("active");
                 this.innerHTML = '<i class="fa-regular fa-heart"></i>';
@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // ========== PAGINATION (placeholder) ==========
+    // PLACEHOLDER//
     document.getElementById("prevPage")?.addEventListener("click", () => {
         showNotification("More products coming soon!");
     });

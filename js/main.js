@@ -1,8 +1,8 @@
-// ===================================
-// TOY HAVEN - SHARED UTILITIES
-// ===================================
 
-// Cart & Wishlist helpers
+// SHARED UTILITIES //
+
+
+// Cart & Wishlist //
 function getCart() {
     return JSON.parse(localStorage.getItem("cart")) || [];
 }
@@ -31,7 +31,7 @@ function formatPrice(amount) {
     return "Rs." + amount.toFixed(2);
 }
 
-// Cart count badge
+// Cart count badge //
 function updateCartCount() {
     const cart = getCart();
     const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
@@ -41,7 +41,7 @@ function updateCartCount() {
     });
 }
 
-// Toast notification
+// Toast notification //
 function showNotification(message, isError = false) {
     const existing = document.querySelector(".notification");
     if (existing) existing.remove();
@@ -59,7 +59,7 @@ function showNotification(message, isError = false) {
     }, 2500);
 }
 
-// Mobile menu
+// MOBILE //
 function initMobileMenu() {
     const menuBtn = document.querySelector(".menu-btn");
     const navLinks = document.querySelector(".nav-links");
@@ -77,7 +77,7 @@ function initMobileMenu() {
     }
 }
 
-// Initialize on every page
+// Initialize on every page //
 document.addEventListener("DOMContentLoaded", () => {
     updateCartCount();
     initMobileMenu();

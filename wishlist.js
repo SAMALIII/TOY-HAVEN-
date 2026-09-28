@@ -1,5 +1,5 @@
 
-// WISHLIST PAGE JS
+// WISHLIST PAGE //
 
 
 const container = document.getElementById("wishlistContainer");
